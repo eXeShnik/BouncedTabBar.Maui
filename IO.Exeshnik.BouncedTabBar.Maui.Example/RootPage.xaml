@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IO.Exeshnik.BouncedTabBar.Maui.RootPage">
+    <VerticalStackLayout VerticalOptions="Center"
+                         HorizontalOptions="Center"
+                         Spacing="12">
+        <!-- XAML children: page sync, content insets, NavigationPage tab, runtime changes. -->
+        <Button Text="Test"
+                Clicked="OnXamlTabsClicked" />
+        <!-- Tabs generated from ItemsSource + ItemTemplate. -->
+        <Button Text="ItemsSource tabs"
+                Clicked="OnItemsSourceTabsClicked" />
+        <!-- Android bottom tab placement (MAUI reserves extra content margin for it). -->
+        <Button Text="Bottom placement tabs"
+                Clicked="OnBottomPlacementTabsClicked" />
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<maui:BouncedTabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                        xmlns:maui="clr-namespace:IO.Exeshnik.BouncedTabBar.Maui;assembly=IO.Exeshnik.BouncedTabBar.Maui"
+                        x:Class="IO.Exeshnik.BouncedTabBar.Maui.MainPage"
+                        IconPadding="4"
+                        BubbleColor="Pink">
+
+    <!-- Plain layout content: the inset goes on the page padding. -->
+    <ContentPage Title="Page 1"
+                 IconImageSource="dotnet_bot.png">
+        <Grid BackgroundColor="Red">
+            <Label Text="Top"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Start" />
+            <VerticalStackLayout HorizontalOptions="Center"
+                                 VerticalOptions="Center"
+                                 Spacing="4">
+                <Button Text="Insert tab at 1" Clicked="OnInsertTabClicked" />
+                <Button Text="Remove last tab" Clicked="OnRemoveLastTabClicked" />
+                <Button Text="Move last tab to 0" Clicked="OnMoveLastTabClicked" />
+                <Button Text="Toggle page 3 icon" Clicked="OnToggleIconClicked" />
+                <Button Text="Toggle bar color" Clicked="OnToggleBarColorClicked" />
+                <Button Text="Replace page 3 content" Clicked="OnReplacePage3ContentClicked" />
+                <Button Text="Set page 3 padding to 40" Clicked="OnSetPage3PaddingClicked" />
+                <Button Text="Toggle page 6 spacing" Clicked="OnTogglePage6SpacingClicked" />
+            </VerticalStackLayout>
+            <Label Text="Bottom"
+                   HorizontalOptions="Center"
+                   VerticalOptions="End" />
+        </Grid>
+    </ContentPage>
+
+    <!-- NavigationPage: the inset follows the current page of the navigation stack. -->
+    <NavigationPage Title="Page 2"
+                    IconImageSource="dotnet_bot.png">
+        <x:Arguments>
+            <ContentPage Title="Page 2 (NavigationPage)">
+                <Grid BackgroundColor="Green">
+                    <Label Text="Top"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Start" />
+                    <Button Text="Push scroll page"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Clicked="OnPushScrollPageClicked" />
+                    <Label Text="Bottom"
+                           HorizontalOptions="Center"
+                           VerticalOptions="End" />
+                </Grid>
+            </ContentPage>
+        </x:Arguments>
+    </NavigationPage>
+
+    <!-- Own padding: the inset is added on top of it. -->
+    <ContentPage x:Name="Page3"
+                 Title="Page 3"
+                 IconImageSource="dotnet_bot.png"
+                 BackgroundColor="Blue"
+                 Padding="0,0,0,20">
+        <Grid BackgroundColor="LightBlue">
+            <Label Text="Top"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Start" />
+            <Label Text="Bottom (20 own padding below)"
+                   HorizontalOptions="Center"
+                   VerticalOptions="End" />
+        </Grid>
+    </ContentPage>
+
+    <!-- ScrollView content: the inset goes on the ScrollView, content scrolls under the bar. -->
+    <ContentPage Title="Page 4"
+                 IconImageSource="dotnet_bot.png">
+        <ScrollView BackgroundColor="Purple">
+            <VerticalStackLayout x:Name="Page4Items"
+                                 Spacing="4"
+                                 Padding="16,0" />
+        </ScrollView>
+    </ContentPage>
+
+    <!-- ScrollView in the last Grid row. -->
+    <ContentPage Title="Page 5"
+                 IconImageSource="dotnet_bot.png">
+        <Grid RowDefinitions="Auto,*"
+              BackgroundColor="Pink">
+            <ScrollView Grid.Row="1">
+                <VerticalStackLayout x:Name="Page5Items"
+                                     Spacing="4"
+                                     Padding="16,0" />
+            </ScrollView>
+            <Label Grid.Row="0"
+                   Text="Header (ScrollView is the last row, declared first)"
+                   Padding="16"
+                   BackgroundColor="HotPink" />
+        </Grid>
+    </ContentPage>
+
+    <!-- CollectionView inside a RefreshView: the inset goes on the native list. -->
+    <ContentPage Title="Page 6"
+                 IconImageSource="dotnet_bot.png">
+        <RefreshView x:Name="Page6Refresh"
+                     Refreshing="OnPage6Refreshing">
+            <CollectionView x:Name="Page6Items"
+                            BackgroundColor="Teal">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="x:String">
+                        <Label Text="{Binding .}"
+                               Padding="16,8"
+                               TextColor="White" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+    </ContentPage>
+
+</maui:BouncedTabbedPage>

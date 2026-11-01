@@ -1,0 +1,23 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maui="clr-namespace:IO.Exeshnik.BouncedTabBar.Maui;assembly=IO.Exeshnik.BouncedTabBar.Maui"
+             x:Class="IO.Exeshnik.BouncedTabBar.Maui.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Implicit style: applied while the page is still being constructed. -->
+            <Style TargetType="maui:BouncedTabbedPage" ApplyToDerivedTypes="True">
+                <Setter Property="BubbleMargin" Value="10" />
+                <Setter Property="SelectedTabColor" Value="Yellow" />
+                <!-- Dark mode: theme-dependent colors flow from the page to the bar. -->
+                <Setter Property="BarBackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
+                <Setter Property="UnselectedTabColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gray100}}" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

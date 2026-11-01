@@ -1,0 +1,42 @@
+# Build output
+[Bb]in/
+[Oo]bj/
+artifacts/
+*.binlog
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+
+# App packages
+*.apk
+*.aab
+*.ipa
+*.msix
+*.appx
+
+# IDE: Visual Studio
+.vs/
+*.user
+*.suo
+*.userprefs
+
+# IDE: JetBrains Rider
+.idea/
+*.DotSettings.user
+*.lscache
+
+# IDE: VS Code (keep the shared launch configuration)
+.vscode/*
+!.vscode/launch.json
+
+# Test results
+TestResults/
+coverage*/
+
+# OS
+.DS_Store
+Thumbs.db
+
+.vscode/

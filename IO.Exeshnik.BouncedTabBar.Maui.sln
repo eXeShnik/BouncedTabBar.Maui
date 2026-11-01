@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IO.Exeshnik.BouncedTabBar.Maui.Example", "IO.Exeshnik.BouncedTabBar.Maui.Example\IO.Exeshnik.BouncedTabBar.Maui.Example.csproj", "{63414FCD-CD9D-489B-B65F-3C8A8123423E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IO.Exeshnik.BouncedTabBar.Maui", "IO.Exeshnik.BouncedTabBar.Maui\IO.Exeshnik.BouncedTabBar.Maui.csproj", "{C5457BBA-2F91-42EE-A9AA-7EBA3D02FB74}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63414FCD-CD9D-489B-B65F-3C8A8123423E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63414FCD-CD9D-489B-B65F-3C8A8123423E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63414FCD-CD9D-489B-B65F-3C8A8123423E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63414FCD-CD9D-489B-B65F-3C8A8123423E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5457BBA-2F91-42EE-A9AA-7EBA3D02FB74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5457BBA-2F91-42EE-A9AA-7EBA3D02FB74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5457BBA-2F91-42EE-A9AA-7EBA3D02FB74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5457BBA-2F91-42EE-A9AA-7EBA3D02FB74}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
